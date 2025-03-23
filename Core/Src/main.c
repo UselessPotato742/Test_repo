@@ -58,28 +58,28 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART1_UART_Init(void);
 /* USER CODE BEGIN PFP */
-// void switchLed()
-// {
-//   rgbBin++;
-//   if(rgbBin > 7) 
-//     rgbBin = 0;
+void switchLed()
+{
+  rgbBin++;
+  if(rgbBin > 7) 
+    rgbBin = 0;
 
-//   uint8_t red   = (rgbBin >> 0) & 1;
-//   uint8_t green = (rgbBin >> 1) & 1;
-//   uint8_t blue  = (rgbBin >> 2) & 1;
+  uint8_t red   = (rgbBin >> 0) & 1;
+  uint8_t green = (rgbBin >> 1) & 1;
+  uint8_t blue  = (rgbBin >> 2) & 1;
 
-//   HAL_GPIO_WritePin(LED_PORT, RED,   red);
-//   HAL_GPIO_WritePin(LED_PORT, GREEN, green);
-//   HAL_GPIO_WritePin(LED_PORT, BLUE,  blue);
-// }
+  HAL_GPIO_WritePin(LED_PORT, RED,   red);
+  HAL_GPIO_WritePin(LED_PORT, GREEN, green);
+  HAL_GPIO_WritePin(LED_PORT, BLUE,  blue);
+}
 
-// void HAL_GPIO_EXTI_Callback(uint16_t GPIO_pin)
-// {
-//     if(GPIO_pin == GPIO_PIN_0)
-//     {
-//       pressed = 1;
-//     }
-// }
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_pin)
+{
+    if(GPIO_pin == GPIO_PIN_0)
+    {
+      pressed = 1;
+    }
+}
 
 /* USER CODE END PFP */
 
